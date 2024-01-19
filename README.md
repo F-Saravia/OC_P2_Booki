@@ -125,3 +125,63 @@ Les icônes proviennet de [Font Awesome](https://fontawesome.com/icons)
 | Hébergements populaires |    chart-line    |
 
 ---
+
+## <u>**Intégration du Header**</u>
+
+L'en-tête présente deux configuration distinctes.
+
+Configuration pour écrans d'une largeur supérieure à 768px
+![Découpe de l'en-tête tablette et desktop](./images/readme/header_desktop_decoupe.jpg)
+
+Configuration pour écrans d'une largeur inférieure à 768px
+![Découpe de l'en-tête mobile](./images/readme/header_mobile_decoupe.jpg)
+
+### <u>Structure HTML de l'en-tête</u>
+
+- header
+  - a
+    - img
+  - nav
+    - ul
+      - li
+        - a
+          - Hébergements
+      - li
+        - a
+          - Activités
+
+> ```html
+> <header class="header">
+>   <a
+>     href="index.html"
+>     aria-label="Naviguer vers la page d'accueil">
+>     <img
+>       class="header__logo"
+>       src="images/logo/Booki.png"
+>       alt="Logo de Booki" />
+>   </a>
+>
+>   <nav
+>     class="header__nav"
+>     aria-label="Menu de navigation principal">
+>     <ul class="nav-list">
+>       <li class="nav-item">
+>         <a
+>           class="txt-S"
+>           href="#offers-sections-container"
+>           aria-label="Naviguer vers la section Hébergements"
+>           >Hébergements</a
+>         >
+>       </li>
+>       <li class="nav-item">
+>         <a
+>           class="txt-S"
+>           href="#activities-section"
+>           aria-label="Naviguer vers la section Activités"
+>           >Activités</a
+>         >
+>       </li>
+>     </ul>
+>   </nav>
+> </header>
+> ```

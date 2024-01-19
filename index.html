@@ -32,7 +32,40 @@
 
   <body>
     <div class="main-container">
-      <header></header>
+      <header class="header">
+        <a
+          href="index.html"
+          aria-label="Naviguer vers la page d'accueil">
+          <img
+            class="header__logo"
+            src="images/logo/Booki.png"
+            alt="Logo de Booki" />
+        </a>
+
+        <nav
+          class="header__nav"
+          aria-label="Menu de navigation principal">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a
+                class="txt-S"
+                href="#offers-sections-container"
+                aria-label="Naviguer vers la section Hébergements"
+                >Hébergements</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="txt-S"
+                href="index.html#activities-section"
+                aria-label="Naviguer vers la section Activités"
+                >Activités</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
       <main>
         <div class="hebergements-and-populaires">
           <section class="hebergements"></section>
