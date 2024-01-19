@@ -1,0 +1,55 @@
+/************ Header properties ************/
+
+.header {
+  /* position: sticky;
+  top: 0px;
+  z-index: 1;
+  background-color: var(--background-main-color); */
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  height: 1.6em;
+}
+
+.header .nav-item {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1em;
+  border-top: 0.15em solid transparent;
+}
+
+.header .nav-item:hover,
+.header .nav-item:active {
+  font-weight: 600;
+  color: var(--main-color);
+  border-top-color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .header__logo {
+    margin-top: 1em;
+  }
+  .header__nav {
+    width: 100%;
+  }
+
+  .header .nav-item {
+    border-top: none;
+    border-bottom: 0.15em solid var(--border-color);
+    padding: 1em 0;
+  }
+
+  .header .nav-item:hover,
+  .header .nav-item:active {
+    color: var(--main-color);
+    border-bottom: 0.15em solid var(--main-color);
+  }
+}
