@@ -72,3 +72,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/****** Common Nav list properties ***********/
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  box-sizing: border-box;
+  width: 100%;
+}

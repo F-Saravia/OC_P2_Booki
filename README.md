@@ -185,3 +185,63 @@ Configuration pour écrans d'une largeur inférieure à 768px
 >   </nav>
 > </header>
 > ```
+
+### <u>Mise en page de l'en-tête</u>
+
+Le code css correspondant à la mise en page se trouve principalement sur le fichier [header.css](./css/header.css).  
+De plus, deux classes se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page du header : 'nav-list' et 'nav-item'.
+
+> N.B: Les classes 'nav-list' et 'nav-item' se trouvent dans ledit style.css car elles sont re-utilisées pour la mise en page du pied-de-page aussi.
+
+Pour répondre aux deux mise en page différentes de l'en-tête, les propriétés `display: flex` et `flex-direction: column/row` sont appliquée à la balise `header`
+
+> ```css
+> .header {
+>  padding: 0 1.5rem;
+>  display: flex;
+>  justify-content: space-between;
+>  align-items: center;
+> }
+> [...]
+> @media screen and (max-width: 768px) {
+>  .header {
+>    flex-direction: column;
+>    width: 100%;
+>    padding: 0;
+>  }
+>  [...]
+> }
+> ```
+
+Pour obtenir les changements des liens de navigation quand ils sont actifs ou survolés avec la souris, ont utilise les pseudo-classes `:hover` et `:active` à travers lesquelles ont modifie certaines propriétés css
+
+```css
+[...]
+.header .nav-item {
+  [...]
+  border-top: 0.15em solid transparent;
+}
+
+.header .nav-item:hover,
+.header .nav-item:active {
+  font-weight: 600;
+  color: var(--main-color);
+  border-top-color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  [...]
+  .header .nav-item {
+    border-top : none;
+    border-bottom: 0.15em solid var(--background-main-color);
+    padding: 1em 0;
+  }
+
+  .header .nav-item:hover,
+  .header .nav-item:active {
+    color: var(--main-color);
+    border-bottom: 0.15em solid var(--main-color);
+  }
+}
+
+```
