@@ -245,3 +245,130 @@ Pour obtenir les changements des liens de navigation quand ils sont actifs ou su
 }
 
 ```
+
+---
+
+## <u>**Intégration de la section de recherche et filtres**</u>
+
+La section de recherche et filtres dispose de 3 configurations:
+
+- Mobile
+
+  ![Section de recherche et filtres, mobile](./images/readme/search-section_mobile_decoupe.jpg)
+
+- Tablette
+
+  ![Section de recherche et filtres, mobile](./images/readme/search-section_tablette_decoupe.jpg)
+
+- Desktop & Large-Desktop
+
+  ![Section de recherche et filtres, mobile](./images/readme/search-section_desktop_decoupe.jpg)
+
+### <u>Structure HTML de la section de recherche et filtres</u>
+
+- section
+  - h2
+  - p
+  - div (searchbar-container)
+    - button (carte)
+    - form
+      - input
+      - button (submit)
+        - span (Rechercher)
+        - i (icône loupe)
+  - div (filters-container)
+    - h3 (Filtres)
+    - ul
+      - li x4
+        - button x4 (Économique/Familial/Romantique/Nos pépites)
+  - p
+    - i (icône information)
+    - texte
+
+> ```html
+> <section class="search-section">
+>   <h2 class="section-title txt-L">
+>     Trouvez votre hébérgement pour des vacances de rêve
+>   </h2>
+>   <p class="section-title-info txt-S">
+>     En plein centre-ville ou en pleine nature
+>   </p>
+>   <div class="searchbar-container txt-S">
+>     <button
+>       class="searchbar-map-btn"
+>       aria-label="Acceder à la carte">
+>       <i
+>         aria-hidden="true"
+>         class="fa-solid fa-location-dot"></i>
+>     </button>
+>     <form
+>       class="searchbar-form"
+>       action=""
+>       method="post">
+>       <label
+>         for="searchbar-text-input"
+>         class="visually-hidden"
+>         >Où partir?
+>       </label>
+>       <input
+>         id="searchbar-text-input"
+>         class="searchbar-text-input"
+>         type="text"
+>         aria-label="Entrez ici votre destination de voyage"
+>         placeholder="Marseille, France" />
+>       <button
+>         class="searchbar-submit-btn-wrapper"
+>         type="submit"
+>         aria-label="Lancer la recherche">
+>         <span class="searchbar-submit-btn_text">Rechercher</span>
+>         <i
+>           aria-hidden="true"
+>           class="fa-solid fa-magnifying-glass searchbar-submit-btn_icon"></i>
+>       </button>
+>     </form>
+>   </div>
+>   <div class="filters-container">
+>     <h3 class="txt-M">Filtres</h3>
+>     <ul>
+>       <li>
+>         <button class="filter-btn txt-XS">
+>           <i
+>             aria-hidden="true"
+>             class="fa-solid fa-money-bill-wave"></i>
+>           Économique
+>         </button>
+>       </li>
+>       <li>
+>         <button class="filter-btn txt-XS">
+>           <i
+>             aria-hidden="true"
+>             class="fa-solid fa-person"></i>
+>           Familial
+>         </button>
+>       </li>
+>       <li>
+>         <button class="filter-btn txt-XS">
+>           <i
+>             aria-hidden="true"
+>             class="fa-solid fa-heart"></i>
+>           Romantique
+>         </button>
+>       </li>
+>       <li>
+>         <button class="filter-btn txt-XS">
+>           <i
+>             aria-hidden="true"
+>             class="fa-solid fa-fire"></i>
+>           Nos pépites
+>         </button>
+>       </li>
+>     </ul>
+>   </div>
+>   <p class="txt-XS">
+>     <i
+>       aria-hidden="true"
+>       class="fa-solid fa-circle-info"></i>
+>     Plus de <mark>500 logements</mark> sont disponibles dans cette ville
+>   </p>
+> </section>
+> ```
