@@ -470,6 +470,8 @@ Pour répondre aux différentes mises en page de cette section,
 
 ---
 
+---
+
 ## <u>**Intégration sections contenant des cartes: points communs**</u>
 
 Les trois sections qui contiennet des cartes sont:
@@ -655,3 +657,54 @@ On distingue deux configuration différentes :
   >    display: flex;
   >  }
   > ```
+
+---
+
+## <u>**Intégration des cartes: points communs**</u>
+
+On distingue trois types de cartes:
+
+- **Hébergements**
+
+  ![Carte Hébergements](./images/readme/cards-accommodations_decoupe.jpg)
+
+- **Les plus populaires**
+
+  ![Carte Les plus populaires](./images/readme/cards-populars_decoupe.jpg)
+
+- **Activités**
+
+  ![Carte Activités](./images/readme/cards-activities_decoupe.jpg)
+
+### <u>Structure HTML commune aux trois sections </u>
+
+Les cartes des sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
+
+- une image
+- un conteneur pour le contenu informatif
+
+> On remarque aussi deux points:
+>
+> 1.  Les cartes sont clickable dans leur intégralité
+>
+> 2.  Le contenu informatif varie en fonction des cartes:
+>
+>     - `Hébergements` et `Les plus populaires`, le contenu informatif est:
+>       - titre
+>       - prix par nuit
+>       - note
+>     - `Activités`, le contenu informatif est seulement le titre de l'activité
+
+Pour répondre à cette structure, tout en tenant compte des différences entre les contenus informatifs, les cartes suivent la strucutre HTML suivante:
+
+- a = card-link-wrapper
+  - article = card
+    - div = card-image-wrapper
+      - img
+    - div = card-content
+      - h3 = card-title
+      - p = card-title-info _(seulement pour `Hébergements` et `Les plus populaires`)_
+      - div = card-rating _(seulement pour `Hébergements` et `Les plus populaires`)_
+        - i x5 _(seulement pour `Hébergements` et `Les plus populaires`)_
+
+Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 types de cartes, notamment en rapport avec la disposition des image et du contenu dans la carte ou encore l'espacement entre eux.
