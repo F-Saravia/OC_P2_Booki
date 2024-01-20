@@ -150,6 +150,7 @@ Configuration pour écrans d'une largeur inférieure à 768px
         - a
           - Activités
 
+<!--
 > ```html
 > <header class="header">
 >   <a
@@ -185,6 +186,7 @@ Configuration pour écrans d'une largeur inférieure à 768px
 >   </nav>
 > </header>
 > ```
+-->
 
 ### <u>Mise en page de l'en-tête</u>
 
@@ -281,101 +283,100 @@ La section de recherche et filtres dispose de 3 configurations:
     - ul
       - li x4
         - button x4 (Économique/Familial/Romantique/Nos pépites)
-  - p
-    - i (icône information)
-    - texte
-
-> ```html
-> <section class="search-section">
->   <h2 class="section-title txt-L">
->     Trouvez votre hébérgement pour des vacances de rêve
->   </h2>
->   <p class="section-title-info txt-S">
->     En plein centre-ville ou en pleine nature
->   </p>
->   <div class="searchbar-container txt-S">
->     <button
->       class="searchbar-map-btn"
->       aria-label="Acceder à la carte">
->       <i
->         aria-hidden="true"
->         class="fa-solid fa-location-dot"></i>
->     </button>
->     <form
->       class="searchbar-form"
->       action=""
->       method="post">
->       <label
->         for="searchbar-text-input"
->         class="visually-hidden"
->         >Où partir?
->       </label>
->       <input
->         id="searchbar-text-input"
->         class="searchbar-text-input"
->         type="text"
->         aria-label="Entrez ici votre destination de voyage"
->         placeholder="Marseille, France" />
->       <button
->         class="searchbar-submit-btn-wrapper"
->         type="submit"
->         aria-label="Lancer la recherche">
->         <span class="searchbar-submit-btn_text">Rechercher</span>
->         <i
->           aria-hidden="true"
->           class="fa-solid fa-magnifying-glass searchbar-submit-btn_icon"></i>
->       </button>
->     </form>
->   </div>
->   <div class="filters-container">
->     <h3 class="txt-M">Filtres</h3>
->     <ul>
->       <li>
->         <button class="filter-btn txt-XS">
->           <i
->             aria-hidden="true"
->             class="fa-solid fa-money-bill-wave"></i>
->           Économique
->         </button>
->       </li>
->       <li>
->         <button class="filter-btn txt-XS">
->           <i
->             aria-hidden="true"
->             class="fa-solid fa-person"></i>
->           Familial
->         </button>
->       </li>
->       <li>
->         <button class="filter-btn txt-XS">
->           <i
->             aria-hidden="true"
->             class="fa-solid fa-heart"></i>
->           Romantique
->         </button>
->       </li>
->       <li>
->         <button class="filter-btn txt-XS">
->           <i
->             aria-hidden="true"
->             class="fa-solid fa-fire"></i>
->           Nos pépites
->         </button>
->       </li>
->     </ul>
->   </div>
->   <p class="txt-XS">
->     <i
->       aria-hidden="true"
->       class="fa-solid fa-circle-info"></i>
->     Plus de <mark>500 logements</mark> sont disponibles dans cette ville
->   </p>
-> </section>
-> ```
+  - p - i (icône information) - texte
+  <!--
+  > ```html
+  > <section class="search-section">
+  >   <h2 class="section-title txt-L">
+  >     Trouvez votre hébérgement pour des vacances de rêve
+  >   </h2>
+  >   <p class="section-title-info txt-S">
+  >     En plein centre-ville ou en pleine nature
+  >   </p>
+  >   <div class="searchbar-container txt-S">
+  >     <button
+  >       class="searchbar-map-btn"
+  >       aria-label="Acceder à la carte">
+  >       <i
+  >         aria-hidden="true"
+  >         class="fa-solid fa-location-dot"></i>
+  >     </button>
+  >     <form
+  >       class="searchbar-form"
+  >       action=""
+  >       method="post">
+  >       <label
+  >         for="searchbar-text-input"
+  >         class="visually-hidden"
+  >         >Où partir?
+  >       </label>
+  >       <input
+  >         id="searchbar-text-input"
+  >         class="searchbar-text-input"
+  >         type="text"
+  >         aria-label="Entrez ici votre destination de voyage"
+  >         placeholder="Marseille, France" />
+  >       <button
+  >         class="searchbar-submit-btn-wrapper"
+  >         type="submit"
+  >         aria-label="Lancer la recherche">
+  >         <span class="searchbar-submit-btn_text">Rechercher</span>
+  >         <i
+  >           aria-hidden="true"
+  >           class="fa-solid fa-magnifying-glass searchbar-submit-btn_icon"></i>
+  >       </button>
+  >     </form>
+  >   </div>
+  >   <div class="filters-container">
+  >     <h3 class="txt-M">Filtres</h3>
+  >     <ul>
+  >       <li>
+  >         <button class="filter-btn txt-XS">
+  >           <i
+  >             aria-hidden="true"
+  >             class="fa-solid fa-money-bill-wave"></i>
+  >           Économique
+  >         </button>
+  >       </li>
+  >       <li>
+  >         <button class="filter-btn txt-XS">
+  >           <i
+  >             aria-hidden="true"
+  >             class="fa-solid fa-person"></i>
+  >           Familial
+  >         </button>
+  >       </li>
+  >       <li>
+  >         <button class="filter-btn txt-XS">
+  >           <i
+  >             aria-hidden="true"
+  >             class="fa-solid fa-heart"></i>
+  >           Romantique
+  >         </button>
+  >       </li>
+  >       <li>
+  >         <button class="filter-btn txt-XS">
+  >           <i
+  >             aria-hidden="true"
+  >             class="fa-solid fa-fire"></i>
+  >           Nos pépites
+  >         </button>
+  >       </li>
+  >     </ul>
+  >   </div>
+  >   <p class="txt-XS">
+  >     <i
+  >       aria-hidden="true"
+  >       class="fa-solid fa-circle-info"></i>
+  >     Plus de <mark>500 logements</mark> sont disponibles dans cette ville
+  >   </p>
+  > </section>
+  > ```
+   -->
 
 ### <u>Mise en page de la section pour la recherche et les filtres</u>
 
-Le code css correspondant à la mise en page se trouve principalement dans le fichier [search-section.css](./css/search-section.css).
+Le code css correspondant à la mise en page se trouve principalement dans le fichier [search-section.css](./css/search-section.css).  
 De plus, des classes communes aux autres sections de la page se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page de la section pour la recherche et les filtres :
 `section`, `section-title`, `section-title-info`
 
@@ -384,7 +385,6 @@ Pour répondre aux différentes mises en page de cette section,
 - _Barre de Recherche_: le bouton qui permet de lancer la recherche affiche soit "Rechercher" soit l'icône d'une loupe; pour ceci une media query est utilisé en combinaison avec `display: none/block`
 
   > ```html
-  > [...]
   > <button
   >   class="searchbar-submit-btn-wrapper"
   >   type="submit"
@@ -394,35 +394,31 @@ Pour répondre aux différentes mises en page de cette section,
   >     aria-hidden="true"
   >     class="fa-solid fa-magnifying-glass searchbar-submit-btn_icon"></i>
   > </button>
-  > [...]
   > ```
   >
   > ```css
-  > [...]
   > .searchbar-submit-btn_text {
   >   font-weight: 600;
   > }
   > .searchbar-submit-btn_icon {
   >   display: none;
   > }
-  > [...]
   > @media screen and (max-width: 768px) {
   >   .searchbar-submit-btn_text {
   >     display: none;
   >   }
   >   .searchbar-submit-btn_icon {
-  >   display: block;
-  >   color: var(--background-main-color);
+  >     display: block;
+  >     color: var(--background-main-color);
   >   }
   > }
-  > [...]
   > ```
 
 - _Filtres_: deux changements s'opèrent sur les filtres; d'une part le sous-titre "Filtres" change d'emplacement par rapport aux boutons; d'autre part, la disposition des boutons eux même.
 
   - Sous-titre "Filtres": pour obtenir que celui-ci se place
 
-    - à gauche des boutons pour les version desktop et large-desktop ,
+    - soit à gauche des boutons pour les version desktop et large-desktop ,
       > à l'aide d'une media query et une div "container" en combinaison avec les propriétés `display:flex` et `flex-direction: row`
     - soit au dessus des boutons pour les versions tablette et mobile,
       > par défaut, il le positionnement normal est laissé
