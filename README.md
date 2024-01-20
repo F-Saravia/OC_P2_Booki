@@ -467,3 +467,191 @@ Pour répondre aux différentes mises en page de cette section,
     >   }
     > }
     > ```
+
+---
+
+## <u>**Intégration sections contenant des cartes: points communs**</u>
+
+Les trois sections qui contiennet des cartes sont:
+
+- **Hébergements**
+
+  ![Section Hébergements](./images/readme/accommodations-section_desktop_decoupe.jpg)
+
+- **Les plus populaires**
+
+  ![Section Les plus populaires](./images/readme/populars-section_desktop_decoupe.jpg)
+
+- **Activités**
+
+  ![Section Activités](./images/readme/activities-section_desktop_decoupe.jpg)
+
+### <u>Structure HTML commune aux trois sections </u>
+
+Les sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
+
+- un titre
+- conteneur des cartes
+  - cartes
+
+> On remarque tout de même:
+>
+> - `Hébergements`: contient un lien en dessous du conteneur de cartes
+> - `Les plus populaires`: le titre est accompagé d'une icône à gauche
+
+Pour répondre à cette structure, tout en tenant compte du lien de la section `Hébergements` et de l'icône de la section `Les plus populaires`, pour chacune de ces sections il a été choisi d'adopter la strucutre HTML suivante:
+
+- section
+  - élément titre (h2 ou bien div > h2 + i)
+  - div (cards-container)
+    - cartes (voir chapitres sur les cartes)
+  - a (seulement section `Hébergement`)
+
+Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 sections, notamment en rapport avec la disposition des titres et des conteneurs dans la sections ou encore l'espacement entre eux.
+
+### <u>Mise en page commune aux trois sections</u>
+
+Le code css correspondant à la mise en page se trouve principalement dans le fichier [layout-sections-with-cards.css](./css/layout-sections-with-cards.css).
+
+De plus, des classes se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page des sections : `section`, `section-title` et `section-title-info`.
+
+On remarque que le titre et accesoirement le lien prennent l'espace qu'ils ont besoin, et les conteneurs de cartes prennent toute la place restante disponible dans la section.
+
+> Pour obtenir ce résultat:
+>
+> ```css
+> section {
+>   [...]
+>   display: flex;
+>   flex-direction: column;
+> }
+> .cards-container {
+>     [...]
+>     flex: 1 1 100%
+>  }
+> ```
+
+### <u>Placement des sections `Hébergements` et `Les plus populaires`: varie en fonction de l'écran</u>
+
+On observe que l'emplacement dans la page des sections `Hébergements` et `Les plus populaires` varie en fonction de la largeur de l'écran. Pour cette raison ces deux sections se trouvent dans un `div class="offers-sections-container"`
+
+- Mobile :
+  - `Les plus populaires` (dessus)
+  - `Hébergements` (dessous)
+    > `flex-direction: column-reverse`
+- Tablette:
+  - `Hébergements` (dessus)
+  - `Les plus populaires` (dessous)
+    > `flex-direction: column`
+- Desktop & Large-Desktop:
+  - || `Hébergements` (gauche) || `Les plus populaires` (droite) ||
+    > `flex-direction: row`
+
+> ```css
+> .offers-sections-container {
+>   display: flex;
+>   gap: 1.375rem;
+>   justify-content: space-between;
+> }
+>
+> @media screen and (max-width: 768px) {
+>   .offers-sections-container {
+>     flex-direction: column-reverse;
+>   }
+> }
+>
+> @media screen and (min-width: 768px) and (max-width: 1024px) {
+>   .offers-sections-container {
+>     flex-direction: column;
+>   }
+> }
+> ```
+
+### <u> Conteneur des cartes : `Hébergements`</u>
+
+On distingue deux configuration différentes :
+
+- Mobile: les cartes sont disposées en colonne
+
+  ![Section Hébergements, mobile](./images/readme/accommodations-section_mobile.jpg)
+
+  > ```css
+  > @media screen and (max-width: 768px) {
+  >   .accommodations-section .cards-container {
+  >     flex-direction: column;
+  >   }
+  > }
+  > ```
+
+- Tablette, Desktop et Large-Destop: les cartes sont rangées en lignes.
+
+  > On intérprete le rangement des cartes dans la maquette en lignes car dans les recommendations il est suggéré d'utiliser Flexbox.
+
+  ![Section Hébergements, desktop](./images/readme/accommodations-section_desktop.jpg)
+
+  > ```css
+  >  .cards-container {
+  >    [...]
+  >    display: flex;
+  >  }
+  >  .accommodations-section .cards-container {
+  >    flex-wrap: wrap;
+  >  }
+  > ```
+
+### <u> Conteneur des cartes : `Les plus populaires`</u>
+
+On distingue deux configuration différentes :
+
+- Mobile, Desktop & Large-Desktop: les cartes sont disposées en colonne
+
+  ![Section Les plus populaires, desktop](./images/readme/populars-section_desktop.jpg)
+
+  > ```css
+  >  .cards-container {
+  >    [...]
+  >    display: flex;
+  >  }
+  >  .populars-section .cards-container {
+  >    flex-direction: column;
+  >  }
+  > ```
+
+- Tablette: les cartes sont rangées en une ligne.
+
+  ![Section Les plus populaires, tablette](./images/readme/populars-section_tablette.jpg)
+
+  > ```css
+  > @media screen and (min-width: 768px) and (max-width: 1024px) {
+  >   .populars-section .cards-container {
+  >     flex-direction: row;
+  >   }
+  > }
+  > ```
+
+### <u> Conteneur des cartes : `Activités`</u>
+
+On distingue deux configuration différentes :
+
+- Mobile: les cartes sont disposées en colonne
+
+  ![Section Activités, mobile](./images/readme/activities-section_mobile.jpg)
+
+  > ```css
+  > @media screen and (max-width: 768px) {
+  >   .activities-section .cards-container {
+  >     flex-direction: column;
+  >   }
+  > }
+  > ```
+
+- Tablette, Desktop et Large-Destop: les cartes sont rangées en lignes.
+
+  ![Section Activités, desktop](./images/readme/activities-section_desktop.jpg)
+
+  > ```css
+  >  .cards-container {
+  >    [...]
+  >    display: flex;
+  >  }
+  > ```
