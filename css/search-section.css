@@ -1,0 +1,122 @@
+/************ search-section properties ************/
+
+.searchbar-container {
+  box-sizing: border-box;
+  margin: 1.375rem 0;
+  display: flex;
+  border-collapse: collapse;
+}
+
+.searchbar-map-btn {
+  font-size: 1em;
+  box-sizing: border-box;
+  padding: 0.9em;
+  background-color: var(--background-main-color);
+  border-radius: 0.9em 0em 0em 0.9em;
+  border: none;
+}
+
+.searchbar-map-btn .fa-solid {
+  color: var(--color-black);
+}
+
+.searchbar-form {
+  font-size: 1em;
+  display: flex;
+  border-collapse: collapse;
+}
+
+.searchbar-form label {
+  display: none;
+}
+
+.searchbar-text-input {
+  font-size: 1em;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0.9em;
+  border-top: 0.1em solid var(--background-main-color);
+  border-bottom: 0.1em solid var(--background-main-color);
+  border-right: none;
+  border-left: none;
+  text-overflow: ellipsis;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchbar-text-input::placeholder {
+  font-weight: bold;
+  color: black;
+}
+
+.searchbar-submit-btn-wrapper {
+  font-size: 1em;
+  box-sizing: border-box;
+  padding: 0.9em;
+  color: var(--background-main-color);
+  background-color: var(--main-color);
+  border-radius: 0em 0.9em 0.9em 0em;
+  border: none;
+}
+
+.searchbar-submit-btn_text {
+  font-weight: 600;
+}
+
+.searchbar-submit-btn_icon {
+  display: none;
+}
+
+.filters-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.filter-btn {
+  width: 100%;
+  padding: 0.66em;
+  background-color: var(--background-main-color);
+  border: 0.2em solid var(--border-color);
+  border-radius: 1.5em;
+  text-align: left;
+  font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn:active {
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .searchbar-submit-btn-wrapper {
+    border-radius: 0.9em;
+    /* box-shadow: 0.1em 0.1em 0.3em var(--shadow-color); */
+    filter: drop-shadow(0px 0.18rem 1rem var(--shadow-color));
+  }
+
+  .searchbar-submit-btn_text {
+    display: none;
+  }
+  .searchbar-submit-btn_icon {
+    display: block;
+    color: var(--background-main-color);
+  }
+
+  .filters-container ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filters-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+}
