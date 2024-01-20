@@ -87,3 +87,21 @@ a {
   box-sizing: border-box;
   width: 100%;
 }
+
+/****** Common Sections layout and spacement properties ***********/
+
+section,
+.footer-section {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+}
+
+.section-title {
+  margin: 0;
+}
+
+.section-title-info {
+  margin: 0.5em 0 0 0;
+}
