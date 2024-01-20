@@ -467,3 +467,44 @@ Pour répondre aux différentes mises en page de cette section,
     >   }
     > }
     > ```
+
+---
+
+## <u>**Intégration sections contenant des cartes: points communs**</u>
+
+Les trois sections qui contiennet des cartes sont:
+
+- **Hébergements**
+
+  ![Section Hébergements](./images/readme/accommodations-section_desktop_decoupe.jpg)
+
+- **Les plus populaires**
+
+  ![Section Les plus populaires](./images/readme/populars-section_desktop_decoupe.jpg)
+
+- **Activités**
+
+  ![Section Activités](./images/readme/activities-section_desktop_decoupe.jpg)
+
+### <u>Structure HTML commune aux trois sections </u>
+
+Les sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
+
+- un titre
+- conteneur des cartes
+  - cartes
+
+> On remarque tout de même:
+>
+> - `Hébergements`: contient un lien en dessous du conteneur de cartes
+> - `Les plus populaires`: le titre est accompagé d'une icône à gauche
+
+Pour répondre à cette structure, tout en tenant compte du lien de la section `Hébergements` et de l'icône de la section `Les plus populaires`, pour chacune de ces sections il a été choisi d'adopter la strucutre HTML suivante:
+
+- section
+  - élément titre (h2 ou bien div > h2 + i)
+  - div (cards-container)
+    - cartes (voir chapitres sur les cartes)
+  - a (seulement section `Hébergement`)
+
+Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 sections, notamment en rapport avec la disposition des titres et des conteneurs dans la sections ou encore l'espacement entre eux.
