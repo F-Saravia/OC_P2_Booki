@@ -671,3 +671,31 @@ De plus, on remarque dans la maquette que sa hauteur est variable en fonction de
 >   }
 > }
 > ```
+
+---
+
+## <u>**Intégration du Footer**</u>
+
+L'pied-de-page présente deux configuration distinctes.
+
+- _Desktop et Tablette_:
+
+  ![Découpe du pied-de-page, desktop](./images/readme/footer_desktop_decoupe.jpg)
+
+- _Mobile_:
+
+  ![Découpe du pied-de-page, mobile](./images/readme/footer_mobile_decoupe.jpg)
+
+### <u>Structure HTML du pied-de-page</u>
+
+On remarque que le pied-de-page est composé de trois parties disctinctes, chacune agencée en une colonne et chacune contenant des liens pour naviguer vers d'autres page du site web.
+
+Pour répondre à ceci, la structure HTML suivante à été choisie:
+
+- footer
+  - div x3
+    - h2
+    - nav
+      - ul
+        - li x3
+          - a x3
