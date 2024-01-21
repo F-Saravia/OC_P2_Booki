@@ -3,9 +3,38 @@
 Intégration de la page d’accueil d’une agence de voyage en HTML et CSS.  
 Le site vise à permettre aux usagers de trouver des hébergements et des activités dans la ville de leur choix.
 
+## Sommaire
+
+1. [Décomposition de la maquette](#chap-1)
+   - [Breakpoints](#chap-1_breakpoints)
+   - [Couleurs](#chap-1_couleurs)
+   - [Polices](#chap-1_polices)
+   - [Icônes](#chap-1_icones)
+2. [En-tête](#chap-2)
+   - [Structure HTML](#chap-2_header-html)
+   - [Mise en page CSS](#chap-2_header-css)
+3. [Section recherche et filtres](#chap-3)
+   - [Structure HTML](#chap-3_search-section-html)
+   - [Mise en page CSS](#chap-3_search-section-css)
+4. [Layout sections contenant des cartes](#chap-4)
+   - [Structure HTML commune aux 3 sections](#chap-4_sections-with-cards-html)
+   - [Mise en page commune aux 3 sections](#chap-4_sections-with-cards-css)
+   - [Conteneur de cartes: `Hébergements`](#chap-4_accommodations-cards-container-css)
+   - [Conteneur de cartes: `Les plus populaires`](#chap-4_populars-cards-container-css)
+   - [Conteneur de cartes: `Activités`](#chap-4_activities-cards-container-css)
+5. [Cartes](#chap-5)
+   - [Structure HTML commune aux 3 types de cartes](#chap-5_cards-html)
+   - [Mise en page commune aux 3 types de cartes](#chap-5_cards-css)
+   - [Cartes: `Hébergements`](#chap-5_accommodations-cards-css)
+   - [Cartes: `Les plus populaires`](#chap-5_populars-cards-css)
+   - [Cartes: `Activités`](#chap-5_activities-cards-css)
+6. [Pied-de-page](#chap-6)
+   - [Structure HTML](#chap-6_footer-html)
+   - [Mise en page CSS](#chap-6_footer-css)
+
 ---
 
-## <u>**Décomposition de la maquette**</u>
+## <a id="chap-1"><u>**1. Décomposition de la maquette**</u></a>
 
 La page d’accueil du site à développer comprend :
 
@@ -40,7 +69,7 @@ La page d’accueil du site à développer comprend :
 
   ![Pied-de-page](./images/readme/footer_desktop.jpg)
 
-### <u>Breakpoints</u>
+### <a id="chap-1_breakpoints"><u>Breakpoints</u></a>
 
 La page d’accueil étant résponsive, la maquette comporte 4 versions :
 
@@ -53,7 +82,7 @@ La page d’accueil étant résponsive, la maquette comporte 4 versions :
 
 > _N.B: La version 'Large Desktop' est identique à la version 'Desktop' limité à 1440px avec des marges blanches sur les côtés_
 
-### <u>Couleurs</u>
+### <a id="chap-1_couleurs"><u>Couleurs</u></a>
 
 - Primaire: #0065FC
 - Sécondaire: #DEEBFF
@@ -77,7 +106,7 @@ La page d’accueil étant résponsive, la maquette comporte 4 versions :
 > }
 > ```
 
-### <u>Polices</u>
+### <a id="chap-1_polices"><u>Polices</u></a>
 
 La police du site est [Raleway (Google Fonts)](https://fonts.google.com/specimen/Raleway) et on distingue 4 styles de texte
 
@@ -110,7 +139,7 @@ La police du site est [Raleway (Google Fonts)](https://fonts.google.com/specimen
 > }
 > ```
 
-### <u>Icônes</u>
+### <a id="chap-1_icones"><u>Icônes</u></a>
 
 Les icônes proviennet de [Font Awesome](https://fontawesome.com/icons)
 
@@ -128,7 +157,7 @@ Les icônes proviennet de [Font Awesome](https://fontawesome.com/icons)
 
 ---
 
-## <u>**Intégration du Header**</u>
+## <a id="chap-2"><u>**2. Intégration du Header**</u></a>
 
 L'en-tête présente deux configuration distinctes.
 
@@ -138,7 +167,7 @@ Configuration pour écrans d'une largeur supérieure à 768px
 Configuration pour écrans d'une largeur inférieure à 768px
 ![Découpe de l'en-tête mobile](./images/readme/header_mobile_decoupe.jpg)
 
-### <u>Structure HTML de l'en-tête</u>
+### <a id="chap-2_header-html"><u>Structure HTML de l'en-tête</u></a>
 
 - header
   - a
@@ -152,7 +181,7 @@ Configuration pour écrans d'une largeur inférieure à 768px
         - a
           - Activités
 
-### <u>Mise en page de l'en-tête</u>
+### <a id="chap-2_header-css"><u>Mise en page de l'en-tête</u></a>
 
 Le code css correspondant à la mise en page se trouve principalement dans le fichier [header.css](./css/header.css).  
 De plus, deux classes se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page du header : `nav-list` et `nav-item`.
@@ -214,7 +243,7 @@ Pour obtenir les changements des liens de navigation quand ils sont actifs ou su
 
 ---
 
-## <u>**Intégration de la section de recherche et filtres**</u>
+## <a id="chap-3"><u>**3. Intégration de la section de recherche et filtres**</u></a>
 
 La section de recherche et filtres dispose de 3 configurations:
 
@@ -230,7 +259,7 @@ La section de recherche et filtres dispose de 3 configurations:
 
   ![Section de recherche et filtres, mobile](./images/readme/search-section_desktop_decoupe.jpg)
 
-### <u>Structure HTML de la section de recherche et filtres</u>
+### <a id="chap-3_search-section-html"><u>Structure HTML de la section de recherche et filtres</u></a>
 
 - section
   - h2
@@ -249,7 +278,7 @@ La section de recherche et filtres dispose de 3 configurations:
         - button x4 (Économique/Familial/Romantique/Nos pépites)
   - p - i (icône information) - texte
 
-### <u>Mise en page de la section pour la recherche et les filtres</u>
+### <a id="chap-3_search-section-css"><u>Mise en page de la section pour la recherche et les filtres</u></a>
 
 Le code css correspondant à la mise en page se trouve principalement dans le fichier [search-section.css](./css/search-section.css).  
 De plus, des classes communes aux autres sections de la page se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page de la section pour la recherche et les filtres :
@@ -345,7 +374,7 @@ Pour répondre aux différentes mises en page de cette section,
 
 ---
 
-## <u>**Intégration sections contenant des cartes: points communs**</u>
+## <a id="chap-4"><u>**4. Intégration sections contenant des cartes: points communs**</u></a>
 
 Les trois sections qui contiennet des cartes sont:
 
@@ -361,7 +390,7 @@ Les trois sections qui contiennet des cartes sont:
 
   ![Section Activités](./images/readme/activities-section_desktop_decoupe.jpg)
 
-### <u>Structure HTML commune aux trois sections </u>
+### <a id="chap-4_sections-with-cards-html"><u>Structure HTML commune aux trois sections </u></a>
 
 Les sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
 
@@ -384,7 +413,7 @@ Pour répondre à cette structure, tout en tenant compte du lien de la section `
 
 Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 sections, notamment en rapport avec la disposition des titres et des conteneurs dans la sections ou encore l'espacement entre eux.
 
-### <u>Mise en page commune aux trois sections</u>
+### <a id="chap-4_sections-with-cards-css"><u>Mise en page commune aux trois sections</u></a>
 
 Le code css correspondant à la mise en page se trouve principalement dans le fichier [layout-sections-with-cards.css](./css/layout-sections-with-cards.css).
 
@@ -406,7 +435,7 @@ On remarque que le titre et accesoirement le lien, prennent l'espace qu'ils ont 
 >  }
 > ```
 
-### <u>Placement des sections `Hébergements` et `Les plus populaires`: varie en fonction de l'écran</u>
+### <a id="chap-4_offers-sections-container-css"><u>Placement des sections `Hébergements` et `Les plus populaires`: varie en fonction de l'écran</u></a>
 
 On observe que l'emplacement dans la page des sections `Hébergements` et `Les plus populaires` varie en fonction de la largeur de l'écran. Pour cette raison ces deux sections se trouvent dans un `div class="offers-sections-container"`
 
@@ -442,7 +471,7 @@ On observe que l'emplacement dans la page des sections `Hébergements` et `Les p
 > }
 > ```
 
-### <u> Conteneur des cartes : `Hébergements`</u>
+### <a id="chap-4_accommodations-cards-container-css"><u> Conteneur des cartes : `Hébergements`</u></a>
 
 On distingue deux configuration différentes :
 
@@ -474,7 +503,7 @@ On distingue deux configuration différentes :
   >  }
   > ```
 
-### <u> Conteneur des cartes : `Les plus populaires`</u>
+### <a id="chap-4_populars-cards-container-css"><u> Conteneur des cartes : `Les plus populaires`</u></a>
 
 On distingue deux configuration différentes :
 
@@ -504,7 +533,7 @@ On distingue deux configuration différentes :
   > }
   > ```
 
-### <u> Conteneur des cartes : `Activités`</u>
+### <a id="chap-4_activities-cards-container-css"><u> Conteneur des cartes : `Activités`</u></a>
 
 On distingue deux configuration différentes :
 
@@ -533,7 +562,7 @@ On distingue deux configuration différentes :
 
 ---
 
-## <u>**Intégration des cartes: points communs**</u>
+## <a id="chap-5"><u>**5. Intégration des cartes: points communs**</u></a>
 
 On distingue trois types de cartes:
 
@@ -549,7 +578,7 @@ On distingue trois types de cartes:
 
   ![Carte Activités](./images/readme/cards-activities_decoupe.jpg)
 
-### <u>Structure HTML commune aux trois sections </u>
+### <a id="chap-5_cards-html"><u>Structure HTML commune aux trois sections </u></a>
 
 Les cartes des sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
 
@@ -582,7 +611,7 @@ Pour répondre à cette structure, tout en tenant compte des différences entre 
 
 Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 types de cartes, notamment en rapport avec la disposition des image et du contenu dans la carte ou encore l'espacement entre eux.
 
-### <u>Mise en page commune aux 3 types de carte </u>
+### <a id="chap-5_cards-css"><u>Mise en page commune aux 3 types de carte </u></a>
 
 Le code css correspondant à la mise en page se trouve principalement dans le fichier [cards.css](./css/cards.css).
 
@@ -590,7 +619,7 @@ L'agencement de l'image et du contenu des trois types de cartes est géré via l
 
 De plus des valeurs en pourcentage sont utilisé pour délimiter l'espace occupé par l'image et par le contenu dans chaque type de carte.
 
-### <u> Mise en page des cartes `Hébergements` </u>
+### <a id="chap-5_accommodations-cards-css"><u> Mise en page des cartes `Hébergements` </u></a>
 
 La carte `Hébergements` est disposé verticalement, avec l'image qui occupe 60% de la hauteur et le contenu 40%.  
 De plus, on remarque dans la maquette que celle-ci est de taille fixe, sauf pour la version mobile qu'elle occupe toute la largeur disponible.
@@ -615,7 +644,7 @@ De plus, on remarque dans la maquette que celle-ci est de taille fixe, sauf pour
 > }
 > ```
 
-### <u> Mise en page de la carte `Les plus populaires`</u>
+### <a id="chap-5_populars-cards-css"><u> Mise en page de la carte `Les plus populaires`</u></a>
 
 La carte `Les plus populaire` est disposé horizontalement, avec l'image qui occupe 32% de la largeur et le contenu 65%.  
 De plus, on remarque dans la maquette que sa hauteur est fixe et que sa largeur est toujours 100% de l'espace qui lui est alloué (en disposition horizontal 1/3 de la largeur du conteneur; en disposition vertical 100% de la largeur du conteneur).
@@ -636,7 +665,7 @@ De plus, on remarque dans la maquette que sa hauteur est fixe et que sa largeur 
 > }
 > ```
 
-### <u> Mise en page de la carte `Activités`</u>
+### <a id="chap-5_activities-cards-css"><u> Mise en page de la carte `Activités`</u></a>
 
 La carte `Activités` est disposé verticalement, avec l'image qui occupe 80% de la hauteur et le contenu 20% (seulement le titre de l'activité).  
 De plus, on remarque dans la maquette que sa hauteur est variable en fonction de l'écran, et que sa largeur est toujours 100% de l'espace qui lui est alloué (en disposition horizontal 1/4 de la largeur du conteneur; en disposition vertical 100% de la largeur du conteneur)
@@ -674,7 +703,7 @@ De plus, on remarque dans la maquette que sa hauteur est variable en fonction de
 
 ---
 
-## <u>**Intégration du Footer**</u>
+## <a id="chap-6"><u>**6. Intégration du Footer**</u></a>
 
 L'pied-de-page présente deux configuration distinctes.
 
@@ -686,7 +715,7 @@ L'pied-de-page présente deux configuration distinctes.
 
   ![Découpe du pied-de-page, mobile](./images/readme/footer_mobile_decoupe.jpg)
 
-### <u>Structure HTML du pied-de-page</u>
+### <a id="chap-6_footer-html"><u>Structure HTML du pied-de-page</u></a>
 
 On remarque que le pied-de-page est composé de trois parties disctinctes, chacune agencée en une colonne et chacune contenant des liens pour naviguer vers d'autres page du site web.
 
@@ -700,7 +729,7 @@ Pour répondre à ceci, la structure HTML suivante à été choisie:
         - li x3
           - a x3
 
-### <u>Mise en page du pied-de-page</u>
+### <a id="chap-6_footer-css"><u>Mise en page du pied-de-page</u></a>
 
 Pour répondre aux deux configurations du pied-de-page (agencement vertical ou horizontal), les propriétés `display:flex` et `flex-direction: row/column` sont appliquées à la balise footer
 
