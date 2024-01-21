@@ -1,0 +1,30 @@
+/****** Footer properties ***********/
+
+.footer {
+  width: 100%;
+  margin-top: 1.5rem;
+  background-color: var(--background-main-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer-section .nav-list {
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer .nav-item {
+  margin: 0.88em 0;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
