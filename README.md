@@ -699,3 +699,36 @@ Pour répondre à ceci, la structure HTML suivante à été choisie:
       - ul
         - li x3
           - a x3
+
+### <u>Mise en page du pied-de-page</u>
+
+Pour répondre aux deux configurations du pied-de-page (agencement vertical ou horizontal), les propriétés `display:flex` et `flex-direction: row/column` sont appliquées à la balise footer
+
+> ```css
+> .footer {
+>   [...]
+>   display: flex;
+>   justify-content: space-around;
+> }
+> @media screen and (max-width: 768px) {
+>   .footer {
+>     flex-direction: column;
+>     justify-content: space-between;
+>   }
+> }
+> ```
+
+Pour répondre à l'agencement vertical de chacune des parties du footer, les propriétés `display:flex` et `flex-direction: column` sont utilisées dans chacune desdites parties.
+
+> ```css
+> .footer-section {
+>   [...]
+>   display: flex;
+>   flex-direction: column;
+> }
+>
+> .footer-section .nav-list {
+>   flex-direction: column;
+>   justify-content: space-around;
+> }
+> ```
