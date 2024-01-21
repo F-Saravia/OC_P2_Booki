@@ -671,3 +671,64 @@ De plus, on remarque dans la maquette que sa hauteur est variable en fonction de
 >   }
 > }
 > ```
+
+---
+
+## <u>**Intégration du Footer**</u>
+
+L'pied-de-page présente deux configuration distinctes.
+
+- _Desktop et Tablette_:
+
+  ![Découpe du pied-de-page, desktop](./images/readme/footer_desktop_decoupe.jpg)
+
+- _Mobile_:
+
+  ![Découpe du pied-de-page, mobile](./images/readme/footer_mobile_decoupe.jpg)
+
+### <u>Structure HTML du pied-de-page</u>
+
+On remarque que le pied-de-page est composé de trois parties disctinctes, chacune agencée en une colonne et chacune contenant des liens pour naviguer vers d'autres page du site web.
+
+Pour répondre à ceci, la structure HTML suivante à été choisie:
+
+- footer
+  - div x3
+    - h2
+    - nav
+      - ul
+        - li x3
+          - a x3
+
+### <u>Mise en page du pied-de-page</u>
+
+Pour répondre aux deux configurations du pied-de-page (agencement vertical ou horizontal), les propriétés `display:flex` et `flex-direction: row/column` sont appliquées à la balise footer
+
+> ```css
+> .footer {
+>   [...]
+>   display: flex;
+>   justify-content: space-around;
+> }
+> @media screen and (max-width: 768px) {
+>   .footer {
+>     flex-direction: column;
+>     justify-content: space-between;
+>   }
+> }
+> ```
+
+Pour répondre à l'agencement vertical de chacune des parties du footer, les propriétés `display:flex` et `flex-direction: column` sont utilisées dans chacune desdites parties.
+
+> ```css
+> .footer-section {
+>   [...]
+>   display: flex;
+>   flex-direction: column;
+> }
+>
+> .footer-section .nav-list {
+>   flex-direction: column;
+>   justify-content: space-around;
+> }
+> ```
