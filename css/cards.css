@@ -1,0 +1,143 @@
+/****** Common Card Layout & Space Properties ***********/
+
+.card-link-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+}
+
+.card {
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  display: flex;
+  background-color: var(--color-white);
+  border-radius: 1.25rem;
+  filter: drop-shadow(0px 0.18rem 1rem var(--shadow-color));
+}
+
+.card-image-wrapper {
+  box-sizing: border-box;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.card-content {
+  box-sizing: border-box;
+  margin: 0.66rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-title-info {
+  margin: 0.5em 0 0 0;
+}
+
+.euro {
+  font-weight: 700;
+}
+
+.neutral-star {
+  color: var(--background-main-color);
+}
+
+.card-rating {
+  margin: 1em 0 0 0;
+}
+
+/****** Accommodations Card Specifics ***********/
+
+.accommodations-section .card-link-wrapper {
+  width: 15.19rem;
+  height: 12.95rem;
+}
+.accommodations-section .card {
+  flex-direction: column;
+  padding: 0.33rem;
+}
+
+.accommodations-section .card-image-wrapper {
+  height: 60%;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.accommodations-section .card-content {
+  height: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .accommodations-section .card-link-wrapper {
+    width: 100%;
+  }
+}
+
+/****** Populars Card Specifics ***********/
+
+.populars-section .card-link-wrapper {
+  height: 9.125rem;
+}
+
+.populars-section .card {
+  padding: 0.33rem;
+}
+
+.populars-section .card-image-wrapper {
+  width: 32%;
+  border-top-left-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
+.populars-section .card-content {
+  width: 65%;
+}
+
+/****** Activity Card specifics ***********/
+
+.activities-section .card {
+  flex-direction: column;
+}
+
+.activities-section .card-image-wrapper {
+  height: 80%;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.activities-section .card-content {
+  height: 20%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .activities-section .card-link-wrapper {
+    height: 12.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .activities-section .card-link-wrapper {
+    height: 16.87rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .activities-section .card-link-wrapper {
+    height: 27.43rem;
+  }
+}

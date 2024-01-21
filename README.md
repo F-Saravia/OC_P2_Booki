@@ -3,6 +3,8 @@
 Intégration de la page d’accueil d’une agence de voyage en HTML et CSS.  
 Le site vise à permettre aux usagers de trouver des hébergements et des activités dans la ville de leur choix.
 
+---
+
 ## <u>**Décomposition de la maquette**</u>
 
 La page d’accueil du site à développer comprend :
@@ -150,44 +152,6 @@ Configuration pour écrans d'une largeur inférieure à 768px
         - a
           - Activités
 
-<!--
-> ```html
-> <header class="header">
->   <a
->     href="index.html"
->     aria-label="Naviguer vers la page d'accueil">
->     <img
->       class="header__logo"
->       src="images/logo/Booki.png"
->       alt="Logo de Booki" />
->   </a>
->
->   <nav
->     class="header__nav"
->     aria-label="Menu de navigation principal">
->     <ul class="nav-list">
->       <li class="nav-item">
->         <a
->           class="txt-S"
->           href="#offers-sections-container"
->           aria-label="Naviguer vers la section Hébergements"
->           >Hébergements</a
->         >
->       </li>
->       <li class="nav-item">
->         <a
->           class="txt-S"
->           href="#activities-section"
->           aria-label="Naviguer vers la section Activités"
->           >Activités</a
->         >
->       </li>
->     </ul>
->   </nav>
-> </header>
-> ```
--->
-
 ### <u>Mise en page de l'en-tête</u>
 
 Le code css correspondant à la mise en page se trouve principalement dans le fichier [header.css](./css/header.css).  
@@ -284,95 +248,6 @@ La section de recherche et filtres dispose de 3 configurations:
       - li x4
         - button x4 (Économique/Familial/Romantique/Nos pépites)
   - p - i (icône information) - texte
-  <!--
-  > ```html
-  > <section class="search-section">
-  >   <h2 class="section-title txt-L">
-  >     Trouvez votre hébérgement pour des vacances de rêve
-  >   </h2>
-  >   <p class="section-title-info txt-S">
-  >     En plein centre-ville ou en pleine nature
-  >   </p>
-  >   <div class="searchbar-container txt-S">
-  >     <button
-  >       class="searchbar-map-btn"
-  >       aria-label="Acceder à la carte">
-  >       <i
-  >         aria-hidden="true"
-  >         class="fa-solid fa-location-dot"></i>
-  >     </button>
-  >     <form
-  >       class="searchbar-form"
-  >       action=""
-  >       method="post">
-  >       <label
-  >         for="searchbar-text-input"
-  >         class="visually-hidden"
-  >         >Où partir?
-  >       </label>
-  >       <input
-  >         id="searchbar-text-input"
-  >         class="searchbar-text-input"
-  >         type="text"
-  >         aria-label="Entrez ici votre destination de voyage"
-  >         placeholder="Marseille, France" />
-  >       <button
-  >         class="searchbar-submit-btn-wrapper"
-  >         type="submit"
-  >         aria-label="Lancer la recherche">
-  >         <span class="searchbar-submit-btn_text">Rechercher</span>
-  >         <i
-  >           aria-hidden="true"
-  >           class="fa-solid fa-magnifying-glass searchbar-submit-btn_icon"></i>
-  >       </button>
-  >     </form>
-  >   </div>
-  >   <div class="filters-container">
-  >     <h3 class="txt-M">Filtres</h3>
-  >     <ul>
-  >       <li>
-  >         <button class="filter-btn txt-XS">
-  >           <i
-  >             aria-hidden="true"
-  >             class="fa-solid fa-money-bill-wave"></i>
-  >           Économique
-  >         </button>
-  >       </li>
-  >       <li>
-  >         <button class="filter-btn txt-XS">
-  >           <i
-  >             aria-hidden="true"
-  >             class="fa-solid fa-person"></i>
-  >           Familial
-  >         </button>
-  >       </li>
-  >       <li>
-  >         <button class="filter-btn txt-XS">
-  >           <i
-  >             aria-hidden="true"
-  >             class="fa-solid fa-heart"></i>
-  >           Romantique
-  >         </button>
-  >       </li>
-  >       <li>
-  >         <button class="filter-btn txt-XS">
-  >           <i
-  >             aria-hidden="true"
-  >             class="fa-solid fa-fire"></i>
-  >           Nos pépites
-  >         </button>
-  >       </li>
-  >     </ul>
-  >   </div>
-  >   <p class="txt-XS">
-  >     <i
-  >       aria-hidden="true"
-  >       class="fa-solid fa-circle-info"></i>
-  >     Plus de <mark>500 logements</mark> sont disponibles dans cette ville
-  >   </p>
-  > </section>
-  > ```
-   -->
 
 ### <u>Mise en page de la section pour la recherche et les filtres</u>
 
@@ -515,7 +390,7 @@ Le code css correspondant à la mise en page se trouve principalement dans le fi
 
 De plus, des classes se trouvant dans le fichier [style.css](./css/style.css) ont une influence sur la mise en page des sections : `section`, `section-title` et `section-title-info`.
 
-On remarque que le titre et accesoirement le lien prennent l'espace qu'ils ont besoin, et les conteneurs de cartes prennent toute la place restante disponible dans la section.
+On remarque que le titre et accesoirement le lien, prennent l'espace qu'ils ont besoin, et les conteneurs de cartes prennent toute la place restante disponible dans la section.
 
 > Pour obtenir ce résultat:
 >
@@ -655,3 +530,144 @@ On distingue deux configuration différentes :
   >    display: flex;
   >  }
   > ```
+
+---
+
+## <u>**Intégration des cartes: points communs**</u>
+
+On distingue trois types de cartes:
+
+- **Hébergements**
+
+  ![Carte Hébergements](./images/readme/cards-accommodations_decoupe.jpg)
+
+- **Les plus populaires**
+
+  ![Carte Les plus populaires](./images/readme/cards-populars_decoupe.jpg)
+
+- **Activités**
+
+  ![Carte Activités](./images/readme/cards-activities_decoupe.jpg)
+
+### <u>Structure HTML commune aux trois sections </u>
+
+Les cartes des sections `Hébergements`, `Les plus populaires` et `Activités` sont toutes structurées de façon similaire:
+
+- une image
+- un conteneur pour le contenu informatif
+
+> On remarque aussi deux points:
+>
+> 1.  Les cartes sont clickable dans leur intégralité
+>
+> 2.  Le contenu informatif varie en fonction des cartes:
+>
+>     - `Hébergements` et `Les plus populaires`, le contenu informatif est:
+>       - titre
+>       - prix par nuit
+>       - note
+>     - `Activités`, le contenu informatif est seulement le titre de l'activité
+
+Pour répondre à cette structure, tout en tenant compte des différences entre les contenus informatifs, les cartes suivent la strucutre HTML suivante:
+
+- a = card-link-wrapper
+  - article = card
+    - div = card-image-wrapper
+      - img
+    - div = card-content
+      - h3 = card-title
+      - p = card-title-info _(seulement pour `Hébergements` et `Les plus populaires`)_
+      - div = card-rating _(seulement pour `Hébergements` et `Les plus populaires`)_
+        - i x5 _(seulement pour `Hébergements` et `Les plus populaires`)_
+
+Cette strucure html permettra de dégager certaines propriétés CSS communes aux 3 types de cartes, notamment en rapport avec la disposition des image et du contenu dans la carte ou encore l'espacement entre eux.
+
+### <u>Mise en page commune aux 3 types de carte </u>
+
+Le code css correspondant à la mise en page se trouve principalement dans le fichier [cards.css](./css/cards.css).
+
+L'agencement de l'image et du contenu des trois types de cartes est géré via les propriété `display:flex` et `flex-direction: column/row`
+
+De plus des valeurs en pourcentage sont utilisé pour délimiter l'espace occupé par l'image et par le contenu dans chaque type de carte.
+
+### <u> Mise en page des cartes `Hébergements` </u>
+
+La carte `Hébergements` est disposé verticalement, avec l'image qui occupe 60% de la hauteur et le contenu 40%.  
+De plus, on remarque dans la maquette que celle-ci est de taille fixe, sauf pour la version mobile qu'elle occupe toute la largeur disponible.
+
+> ```css
+> [...]
+> .accommodations-section .card-link-wrapper {
+>   width: 15.19rem;
+>   height: 12.95rem;
+> }
+> .accommodations-section .card-image-wrapper {
+>   height: 60%;
+>   [...]
+> }
+> .accommodations-section .card-content {
+>   height: 40%;
+> }
+> @media screen and (max-width: 768px) {
+>   .accommodations-section .card-link-wrapper {
+>     width: 100%;
+>   }
+> }
+> ```
+
+### <u> Mise en page de la carte `Les plus populaires`</u>
+
+La carte `Les plus populaire` est disposé horizontalement, avec l'image qui occupe 32% de la largeur et le contenu 65%.  
+De plus, on remarque dans la maquette que sa hauteur est fixe et que sa largeur est toujours 100% de l'espace qui lui est alloué (en disposition horizontal 1/3 de la largeur du conteneur; en disposition vertical 100% de la largeur du conteneur).
+
+> ```css
+> [...]
+> .populars-section .card-link-wrapper {
+>   height: 9.125rem;
+> }
+>
+> .populars-section .card-image-wrapper {
+>   width: 32%;
+>   [...]
+> }
+>
+> .populars-section .card-content {
+>   width: 65%;
+> }
+> ```
+
+### <u> Mise en page de la carte `Activités`</u>
+
+La carte `Activités` est disposé verticalement, avec l'image qui occupe 80% de la hauteur et le contenu 20% (seulement le titre de l'activité).  
+De plus, on remarque dans la maquette que sa hauteur est variable en fonction de l'écran, et que sa largeur est toujours 100% de l'espace qui lui est alloué (en disposition horizontal 1/4 de la largeur du conteneur; en disposition vertical 100% de la largeur du conteneur)
+
+> ```css
+> [...]
+> .activities-section .card-image-wrapper {
+>   height: 80%;
+>   [...]
+> }
+>
+> .activities-section .card-content {
+>   height: 20%;
+>   [...]
+> }
+>
+> @media screen and (max-width: 768px) {
+>   .activities-section .card-link-wrapper {
+>     height: 12.5rem;
+>   }
+> }
+>
+> @media screen and (min-width: 768px) and (max-width: 1024px) {
+>   .activities-section .card-link-wrapper {
+>     height: 16.87rem;
+>   }
+> }
+>
+> @media screen and (min-width: 1024px) {
+>   .activities-section .card-link-wrapper {
+>     height: 27.43rem;
+>   }
+> }
+> ```
